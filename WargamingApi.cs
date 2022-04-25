@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace WargamingApi
 {
-    public class WargamingApi
+    public sealed class WargamingApi
     {
         internal static HttpClient Client;
         internal static readonly TimeSpan RateLimit = TimeSpan.FromMilliseconds(111.1f);
@@ -32,27 +32,28 @@ namespace WargamingApi
         {
             timeout ??= RateLimit;
 
-            while (true)
+            while (DateTime.UtcNow - LastRequest <= timeout)
             {
-                if (DateTime.UtcNow - LastRequest > timeout)
-                    break;
                 await Task.Delay((TimeSpan) timeout - (DateTime.UtcNow - LastRequest));
             }
 
             LastRequest = DateTime.UtcNow;
         }
 
-        public static async Task<T> GetRequest<T>(Uri uri)
+        public static Task<T> GetRequest<T>(Uri uri)
         {
-            await RateLimiter();
+            return Task.Run(async () =>
+            {
+                await RateLimiter();
 
-            var resp = await Client.SendAsync(new HttpRequestMessage(HttpMethod.Get, uri));
-            resp.EnsureSuccessStatusCode();
+                var resp = await Client.SendAsync(new HttpRequestMessage(HttpMethod.Get, uri));
+                resp.EnsureSuccessStatusCode();
 
-            return JsonConvert.DeserializeObject<T>(
-                await resp.Content.ReadAsStringAsync(),
-                SerializationOptions
-            );
+                return JsonConvert.DeserializeObject<T>(
+                    await resp.Content.ReadAsStringAsync(),
+                    SerializationOptions
+                );
+            });
         }
     }
 }
