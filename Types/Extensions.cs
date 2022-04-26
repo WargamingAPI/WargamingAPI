@@ -24,7 +24,7 @@ namespace WargamingApi.Types
                 _ => throw new ArgumentOutOfRangeException(nameof(target), target, null)
             };
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static string EnumToString(this Regions target)
         {
@@ -37,7 +37,7 @@ namespace WargamingApi.Types
                 _ => throw new ArgumentOutOfRangeException(nameof(target), target, null)
             };
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static string EnumToString(this Type target)
         {
