@@ -8,25 +8,26 @@ namespace WargamingApi.Types
 {
     public class RequestParameters
     {
-        public string? search { get; set; }
-        public string? access_token { get; set; }
+        public string? Search { get; set; }
+        public string? AccessToken { get; set; }
 
 
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? account_id { get; set; }
+        [JsonProperty("account_id")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(ArrayConverter))]
+        public IEnumerable<long>? AccountId { get; set; }
 
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<string>? fields { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(ArrayConverter))]
+        public IEnumerable<string>? Fields { get; set; }
 
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<string>? game { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(ArrayConverter))]
+        public IEnumerable<string>? Game { get; set; }
 
 
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Language? language { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(StringEnumConverter))]
+        public Language? Language { get; set; }
 
-        [JsonConverter(typeof(StringEnumConverter))]
-        public Types? type { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(StringEnumConverter))]
+        public Type? Type { get; set; }
 
         public byte? Limit { get; set; }
     }

@@ -3,14 +3,14 @@ namespace WargamingApi.Types
 {
     public class Respond
     {
-        public string status { get; set; } = "";
-        public Error? error { get; set; }
-        public Meta? meta { get; set; }
+        public string Status { get; set; } = "";
+        public Error? Error { get; set; }
+        public Meta? Meta { get; set; }
     }
 
     public class Respond<T, TT> : Respond
     {
-        public new T meta { get; set; }
-        public TT data { get; set; }
+        public new T Meta { get; set; } = default!;
+        public TT Data { get; set; } = default!;
     }
 }

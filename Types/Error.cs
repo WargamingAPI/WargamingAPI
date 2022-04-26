@@ -2,9 +2,9 @@
 {
     public struct Error
     {
-        public string field { get; set; }
-        public string message { get; set; }
-        public uint code { get; set; }
-        public object value { get; set; }
+        public string Field { get; set; }
+        public string Message { get; set; }
+        public uint Code { get; set; }
+        public object Value { get; set; }
     }
 }
