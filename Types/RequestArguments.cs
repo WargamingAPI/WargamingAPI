@@ -13,7 +13,7 @@ namespace WargamingApi.Types
         {
             set
             {
-                var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(value);
+                var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(value)!;
                 foreach (var (key, val) in dict)
                 {
                     if (val == null) continue;
