@@ -1,13 +1,10 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using JsonSerializer = System.Text.Json.JsonSerializer;
+using System.Text.Json;
 
 namespace WargamingApi.Types
 {
     public class RequestArguments
     {
-        [JsonConverter(typeof(StringEnumConverter))]
         public Regions Region;
 
         public string Parameters { get; set; } = "";

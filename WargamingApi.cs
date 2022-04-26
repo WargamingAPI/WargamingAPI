@@ -33,9 +33,7 @@ namespace WargamingApi
             timeout ??= RateLimit;
 
             while (DateTime.UtcNow - LastRequest <= timeout)
-            {
                 await Task.Delay((TimeSpan) timeout - (DateTime.UtcNow - LastRequest));
-            }
 
             LastRequest = DateTime.UtcNow;
         }

@@ -1,8 +1,7 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace WargamingApi.Types
@@ -29,6 +28,6 @@ namespace WargamingApi.Types
         [JsonConverter(typeof(StringEnumConverter))]
         public Types? type { get; set; }
 
-        [Range(1, 100)] public byte? limit { get; set; }
+        public byte? Limit { get; set; }
     }
 }
