@@ -10,9 +10,9 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>main client for API wrappers</Description>
         <PackageProjectUrl>https://github.com/WargamingAPI/WargamingAPI</PackageProjectUrl>
-        <PackageLicenseUrl>Copyright (c) Alexander 2022</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/WargamingAPI/WargamingAPI</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
+        <Copyright>Copyright (c) Alexander 2022</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
