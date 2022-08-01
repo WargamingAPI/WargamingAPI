@@ -1,6 +1,7 @@
 ﻿#nullable enable
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using WargamingApi.Types.Enums;
 
 namespace WargamingApi.Types
 {
