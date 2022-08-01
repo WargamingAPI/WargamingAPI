@@ -1,14 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
         <LangVersion>8</LangVersion>
         <Configurations>Debug;Release;Release Deploy</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Title>WargamingApi</Title>
+        <Authors>Satan1c</Authors>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>main client for API wrappers</Description>
+        <PackageProjectUrl>https://github.com/WargamingAPI/WargamingAPI</PackageProjectUrl>
+        <PackageLicenseUrl>Copyright (c) Alexander 2022</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/WargamingAPI/WargamingAPI</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="RateLimiter" Version="2.2.0" />
     </ItemGroup>
 
 </Project>
